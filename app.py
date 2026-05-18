@@ -1,3 +1,5 @@
+import os
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
 import streamlit as st
 import tensorflow as tf
 from PIL import Image
@@ -5,7 +7,8 @@ import numpy as np
 
 # Load trained model
 model = tf.keras.models.load_model(
-    "cat_dog_classifier.keras"
+    "cat-dog.keras",
+    compile=False
 )
 
 # Title
